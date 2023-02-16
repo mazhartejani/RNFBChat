@@ -1,12 +1,15 @@
-import {Text, TouchableOpacity, View} from 'react-native';
-import React from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {RootState} from '../app/store';
-import {decrement, increment} from '../features/counter/counterSlice';
+import { Text, TouchableOpacity, View } from 'react-native'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '../redux-store/store'
+import {
+  decrement,
+  increment,
+} from '../redux-store/features/counter/counterSlice'
 
 const Counter = () => {
-  const count = useSelector((state: RootState) => state.counter.value);
-  const dispatch = useDispatch();
+  const count = useSelector((state: RootState) => state.counter.value)
+  const dispatch = useDispatch()
 
   return (
     <View>
@@ -18,7 +21,7 @@ const Counter = () => {
         <Text>Decrement</Text>
       </TouchableOpacity>
     </View>
-  );
-};
+  )
+}
 
-export default Counter;
+export default Counter
